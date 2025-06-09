@@ -1,29 +1,41 @@
-import React from 'react'
+import React, { useState } from 'react'
 import logo from '../assets/Logo.svg'
 
 function Nav() {
+    const [menuAberto, setMenuAberto] = useState(false)
+
+    const toggleMenu = () => {
+        setMenuAberto(!menuAberto)
+    }
+
   return (
     <>
       <nav>
-        <ul>
-          <img src={logo} alt='Logo do Little Lemon'/>
+        <img src={logo} alt="Logo do Little Lemon" />
+        <span
+          className="material-symbols-outlined menu-icon"
+          onClick={toggleMenu}
+        >
+          menu
+        </span>
+        <ul className={menuAberto ? 'nav-links open' : 'nav-links'} >
           <li>
-            <a href="#">HOME</a>
+            <a href="#">Home</a>
           </li>
           <li>
-            <a href="#">ABOUT</a>
+            <a href="#">About</a>
           </li>
           <li>
-            <a href="#">MENU</a>
+            <a href="#">Menu</a>
           </li>
           <li>
-            <a href="#">RESERVATION</a>
+            <a href="#">Reservation</a>
           </li>
           <li>
-            <a href="#">ORDER ONLINE</a>
+            <a href="#">Order Online</a>
           </li>
           <li>
-            <a href="#">LOGIN</a>
+            <a href="#">Login</a>
           </li>
         </ul>
       </nav>
