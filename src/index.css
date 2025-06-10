@@ -202,7 +202,7 @@ h2, p{
 /*Highlights*/
 .top-part{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   margin-top: 4rem;
 }
@@ -248,7 +248,10 @@ h2, p{
 .top{
   display: flex;
   justify-content: space-between;
-  margin: 1.5rem 1.8rem 2.5rem 1.3rem;
+  align-items: baseline;
+  margin: 1.5rem 1.8rem 2.5rem 2rem;
+  width: calc(100% - 3.8rem); 
+
 }
 .card-title{
   color: black;
@@ -278,4 +281,137 @@ h2, p{
   gap: 0.2rem; 
   margin: 0 1.9rem 2.3rem 2rem;
   margin-top: auto; 
+}
+
+@media (max-width: 768px) {
+  .top-part {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+
+  .top-part h1 {
+    font-size: 52px;
+  }
+
+  .top-part button {
+    width: 100%;
+    max-width: 260px;
+    height: 50px;
+    font-size: 16px;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+  }
+
+  .card-img {
+    width: 100%;
+    height: auto;
+  }
+
+  .card-text {
+    width: 80%;
+    margin: 0 1.5rem 1rem 1.5rem;
+  }
+
+  .bottom {
+    margin: 2rem 1.5rem 1.5rem 1.5rem;
+  }
+}
+
+
+
+/* Testimonials */
+.testimonials-title h1{
+  color: black;
+  text-align: center;
+  margin-top: 5rem;
+}
+.testimonials-cards{
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.75rem;
+}
+.testimonials-cards .cartao{
+  background-color: var(--green);
+  color: white;
+  font-family: var(--font-karla);
+  width: 250px;
+  height: 297px;
+  border-radius: 16px 16px 0 0;
+  text-align: center;
+}
+.partedecima{
+  display: grid;
+  gap: 1rem;
+  justify-content: center;
+  padding-top: 1.3rem;
+}
+.avatar{
+  justify-self: center;
+  width: 79px;
+  height: 82px;
+}
+.testimonials-cards h4{
+  margin-top: 0.75rem;
+}
+.testimonials-cards p{
+  width: 170px;
+  font-weight: 400;
+  justify-self: center;
+  text-align: left;
+  margin: 0.5rem 0.5rem 2.5rem 0.5rem;
+}
+@media (max-width: 480px) {
+  /* Testimonials */
+  .testimonials-title h1 {
+    font-size: 52px;
+    margin: 3rem 1rem 1rem 1rem;
+  }
+
+  .testimonials-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .testimonials-cards .cartao {
+    width: 90%;
+    max-width: 230px;
+    height: 240px;
+    border-radius: 16px;
+    padding: 1rem 1rem 2rem 1rem;
+  }
+
+  .partedecima {
+    gap: 0.5rem;
+    padding-top: 1rem;
+  }
+
+  .avatar {
+    width: 64px;
+    height: 64px;
+  }
+
+  .testimonials-cards p {
+    width: 100%;
+    font-size: 14px;
+    margin: 1rem 0;
+    text-align: center;
+  }
+  .testimonials-cards h4{
+    margin-top: 0.75rem;
+  }
 }
