@@ -1,30 +1,30 @@
-import React from "react";
+import MarioAndrian from "../assets/Mario and Adrian b 1.png";
 
 function Footer() {
   return (
     <>
       <footer>
-        <img />
+        <img src={MarioAndrian} />
         <div className="footer-column">
           <h4>Doormat Navigation</h4>
           <ul>
             <li>
-              <a href="#">HOME</a>
+              <a href="#">Home</a>
             </li>
             <li>
-              <a href="#">ABOUT</a>
+              <a href="#">About</a>
             </li>
             <li>
-              <a href="#">MENU</a>
+              <a href="#">Menu</a>
             </li>
             <li>
-              <a href="#">RESERVATION</a>
+              <a href="#">Reservation</a>
             </li>
             <li>
-              <a href="#">ORDER ONLINE</a>
+              <a href="#">Order Online</a>
             </li>
             <li>
-              <a href="#">LOGIN</a>
+              <a href="#">Login</a>
             </li>
           </ul>
         </div>
