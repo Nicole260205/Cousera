@@ -156,7 +156,11 @@ h2, p{
     margin-right: 7rem;
     object-fit: cover;
 }
-.hero-button{
+.hero-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none; /* remove o sublinhado padrão */
     background-color: var(--yellow);
     color: black;
     font-family: var(--font-markazi);
@@ -167,7 +171,14 @@ h2, p{
     font-size: 18px;
     border: none;
     margin-top: 32px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    cursor: pointer;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 
+                0 6px 20px 0 rgba(0,0,0,0.19);
+    transition: background-color 0.3s ease;
+}
+
+.hero-button:hover {
+    background-color: #fdd835; 
 }
 @media (max-width: 768px) {
   .hero-section {
@@ -221,6 +232,9 @@ h2, p{
   border: none;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
+.top-part button:hover {
+    background-color: #fdd835; 
+  }
 .cards{
   display: flex;
   justify-content: center;
@@ -599,4 +613,13 @@ footer{
     margin-bottom: 0.5rem;
   }
 }
-
+/*Booking Form*/
+.booking-form{
+  display: grid;
+  justify-content: center;
+}
+.booking-form form{
+  border: 1px solid var(--green);
+  justify-self: center;
+  width: 640px;
+}
