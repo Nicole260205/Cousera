@@ -4,7 +4,10 @@ function Footer() {
   return (
     <>
       <footer>
-        <img src={MarioAndrian} />
+        <div className="img-container">
+          <img src={MarioAndrian} />
+        </div>
+
         <div className="footer-column">
           <h4>Doormat Navigation</h4>
           <ul>

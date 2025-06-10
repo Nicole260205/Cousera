@@ -526,3 +526,26 @@ h2, p{
     left: -20px;
   }
 }
+/*Footer*/
+footer{
+  display: flex;
+  justify-content: center;
+  margin-top:  12rem;
+  gap: 4rem;
+  height: 408px;
+}
+.img-container{
+  background-color: var(--green);
+  width: 269px;
+  height: 181px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border-radius: 10px;
+}
+.img-container img{
+  width: 256.4px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+}
