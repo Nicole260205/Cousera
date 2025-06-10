@@ -1,4 +1,4 @@
-import MarioAndrian from "../assets/Mario and Adrian b 1.png";
+import MarioAndrian from "../assets/Mario and Adrian b.jpg";
 
 function Footer() {
   return (
