@@ -4,21 +4,15 @@ import Hero from "./Hero";
 import Highlights from "./Highlights";
 import Testimonials from "./Testimonials";
 import About from "./About";
-import BookingPage from "../pages/BookingPage"; 
-
-const initializeTimes = () => {
-  return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
-}
-
-const updateTimes = (state, action) => {
-  if (action.type === "update"){
-    return ["17:00", "18:30", "19:30", "20:30"];
-  }
-  return state
-}
+import BookingPage from "../pages/BookingPage";
+import { initializeTimes, updateTimes } from "../utils/times";
 
 function Main() {
-  const [availableTimes, dispatch] = useReducer(updateTimes, [], initializeTimes);
+  const [availableTimes, dispatch] = useReducer(
+    updateTimes,
+    [],
+    initializeTimes
+  );
 
   return (
     <Routes>

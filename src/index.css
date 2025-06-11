@@ -703,11 +703,18 @@ button[type="submit"]:hover {
 .booking-form h1 {
   margin-bottom: 2rem;
 }
+.booking-form h2{
+  color: var(--yellow);
+  margin-top: 3rem;
+  font-size: 38px;
+  font-family: var(--font-markazi);
+  font-weight: 700;
+}
 
 .booking-form form {
   border: 2px solid var(--green);
   padding: 2rem;
-  margin-top: 5rem;
+  margin-top: 2rem;
   width: 100%;
   max-width: 700px;
   background-color: #f9f9f9;
@@ -785,5 +792,50 @@ button[type="submit"]:hover {
   .booking-form form {
     padding: 1.5rem;
     margin-top: 3rem;
+  }
+}
+/* Booking Table */
+.booking-table {
+  width: 100%;
+  max-width: 700px;
+  margin: 2rem auto 0;
+  border-collapse: collapse;
+  background-color: #f9f9f9;
+  border: 2px solid var(--green);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.booking-table th,
+.booking-table td {
+  padding: 12px 16px;
+  text-align: left;
+  font-family: var(--font-karla);
+}
+
+.booking-table th {
+  background-color: var(--green);
+  color: white;
+  font-weight: bold;
+}
+
+.booking-table tr:nth-child(even) {
+  background-color: #f0f0f0;
+}
+
+.booking-table tr:hover {
+  background-color: #e0e0e0;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .booking-table {
+    font-size: 0.9rem;
+  }
+
+  .booking-table th,
+  .booking-table td {
+    padding: 10px 12px;
   }
 }

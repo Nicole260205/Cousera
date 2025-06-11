@@ -11,7 +11,10 @@ function Nav() {
 
   return (
     <nav>
-      <img src={logo} alt="Logo do Little Lemon" />
+      <Link to="/">
+        <img src={logo} alt="Logo do Little Lemon" />
+      </Link>
+
       <span
         className="material-symbols-outlined menu-icon"
         onClick={toggleMenu}

@@ -6,10 +6,17 @@ function BookingForm({ availableTimes = [], dispatch }) {
   const [guests, setGuests] = useState(1);
   const [occasion, setOccasion] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log({ date, time, guests, occasion });
-    alert("Reservation sent");
+    const formData = { date, time, guests, occasion };
+
+    const success = await submitAPI(formData);
+
+    if (success) {
+      alert("Reservation sent!");
+    } else {
+      alert("There was a problem with your reservation.");
+    }
   };
 
   return (
@@ -23,7 +30,10 @@ function BookingForm({ availableTimes = [], dispatch }) {
           type="date"
           id="res-date"
           value={date}
-          onChange={(e) => setDate(e.target.value)}
+          onChange={(e) => {
+            setDate(selectedDate);
+            dispatch({type: "UPDATE_TIMES", date: selectedDate})
+          }}
           required
         />
       </div>
