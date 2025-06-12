@@ -614,18 +614,6 @@ footer{
   }
 }
 /*Booking Form*/
-.booking-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 3rem;
-}
-
-.booking-form h1 {
-  margin-bottom: 2rem;
-}
-
 .booking-form form {
   border: 2px solid var(--green);
   padding: 2rem;
@@ -702,6 +690,7 @@ button[type="submit"]:hover {
 
 .booking-form h1 {
   margin-bottom: 2rem;
+  color: var(--green);
 }
 .booking-form h2{
   color: var(--yellow);
@@ -838,4 +827,20 @@ button[type="submit"]:hover {
   .booking-table td {
     padding: 10px 12px;
   }
+}
+.booking-confirmation {
+  padding: 3rem;
+  text-align: center;
+  font-family: var(--font-karla);
+}
+
+.booking-confirmation h1 {
+  color: var(--green);
+  margin-bottom: 1rem;
+}
+.booking-confirmation a {
+  margin-top: 2rem;
+  display: inline-block;
+  color: var(--green);
+  text-decoration: underline;
 }

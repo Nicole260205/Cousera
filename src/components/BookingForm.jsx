@@ -1,52 +1,88 @@
 import React, { useState } from "react";
 
-function BookingForm({ availableTimes = [], dispatch }) {
-  const [date, setDate] = useState("");
-  const [time, setTime] = useState("");
-  const [guests, setGuests] = useState(1);
-  const [occasion, setOccasion] = useState("");
+function BookingForm({ availableTimes, dispatch, submitForm }) {
+  const [formData, setFormData] = useState({
+    name: "",
+    date: "",
+    time: "",
+    guests: 1,
+    occasion: "Birthday",
+  });
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const formData = { date, time, guests, occasion };
+  const handleChange = (e) => {
+    const { name, value } = e.target;
 
-    const success = await submitAPI(formData);
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
 
-    if (success) {
-      alert("Reservation sent!");
-    } else {
-      alert("There was a problem with your reservation.");
+    if (name === "date") {
+      dispatch({ type: "UPDATE_TIMES", date: value });
     }
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (isFormValid()) {
+      submitForm(formData);
+    }
+  };
+
+  const isFormValid = () => {
+    return (
+      formData.name.trim().length >= 2 &&
+      formData.date &&
+      formData.time &&
+      formData.guests >= 1 &&
+      formData.guests <= 10
+    );
+  };
+
   return (
-    <form className="form-book" onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="form-book">
       <div className="form-group">
-        <label htmlFor="res-date">
+        <label htmlFor="name">
+          <span className="material-symbols-outlined">person</span>
+          Your name:
+        </label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+          required
+          minLength={2}
+        />
+      </div>
+
+      <div className="form-group">
+        <label htmlFor="date">
           <span className="material-symbols-outlined">calendar_today</span>
           Choose date:
         </label>
         <input
           type="date"
-          id="res-date"
-          value={date}
-          onChange={(e) => {
-            setDate(selectedDate);
-            dispatch({type: "UPDATE_TIMES", date: selectedDate})
-          }}
+          id="date"
+          name="date"
+          value={formData.date}
+          onChange={handleChange}
           required
+          min={new Date().toISOString().split("T")[0]} // impede datas passadas
         />
       </div>
 
       <div className="form-group">
-        <label htmlFor="res-time">
+        <label htmlFor="time">
           <span className="material-symbols-outlined">schedule</span>
           Choose time:
         </label>
         <select
-          id="res-time"
-          value={time}
-          onChange={(e) => setTime(e.target.value)}
+          id="time"
+          name="time"
+          value={formData.time}
+          onChange={handleChange}
           required
         >
           <option value="" disabled>
@@ -68,10 +104,11 @@ function BookingForm({ availableTimes = [], dispatch }) {
         <input
           type="number"
           id="guests"
+          name="guests"
           min="1"
           max="10"
-          value={guests}
-          onChange={(e) => setGuests(e.target.value)}
+          value={formData.guests}
+          onChange={handleChange}
           required
         />
       </div>
@@ -83,15 +120,18 @@ function BookingForm({ availableTimes = [], dispatch }) {
         </label>
         <select
           id="occasion"
-          value={occasion}
-          onChange={(e) => setOccasion(e.target.value)}
+          name="occasion"
+          value={formData.occasion}
+          onChange={handleChange}
         >
           <option value="Birthday">Birthday</option>
           <option value="Anniversary">Anniversary</option>
         </select>
       </div>
 
-      <button type="submit">Send Reservation</button>
+      <button type="submit" disabled={!isFormValid()}>
+        Send Reservation
+      </button>
     </form>
   );
 }
