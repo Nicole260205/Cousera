@@ -9,7 +9,7 @@ function Highlights() {
     <>
       <div className="top-part">
         <h1>This weeks specials!</h1>
-        <button>Online Menu</button>
+        <button aria-label="Online menu">Online Menu</button>
       </div>
       <div className="cards">
         <div className="card">

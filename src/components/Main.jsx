@@ -46,7 +46,7 @@ function Main() {
           <BookingPage
             availableTimes={availableTimes}
             dispatch={dispatch}
-            submitForm={submitForm} // ✅ passa submitForm
+            submitForm={submitForm} 
           />
         }
       />

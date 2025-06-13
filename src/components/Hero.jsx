@@ -11,7 +11,11 @@ function Hero() {
           We are a family owned Mediterranean restaurant, focused on traditional
           recipes served with a modern twist.
         </p>
-        <Link to="/booking" className="hero-button">
+        <Link
+          to="/booking"
+          className="hero-button"
+          aria-label="Submit reservation form"
+        >
           Reserve a table
         </Link>
       </div>

@@ -10,7 +10,7 @@ function BookingPage({ availableTimes, dispatch, submitForm }) {
       <BookingForm
         availableTimes={availableTimes}
         dispatch={dispatch}
-        submitForm={submitForm} // ✅ aqui
+        submitForm={submitForm}
       />
     </section>
   );

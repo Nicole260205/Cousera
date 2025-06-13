@@ -69,7 +69,7 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
           value={formData.date}
           onChange={handleChange}
           required
-          min={new Date().toISOString().split("T")[0]} // impede datas passadas
+          min={new Date().toISOString().split("T")[0]} 
         />
       </div>
 
